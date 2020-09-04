@@ -6,48 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coding Quiz</title>
 
-    <!-- Links to css -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
   <body>
-
-    <!-- Links to highscores html  -->
-    <div class="scores"><a href="highscores.html">View Highscores</a></div>
-
-    <!-- Creates the timer div and sets the time to 0 to start. -->
-    <div class="timer">Time: <span id="time">0</span></div>
-
-    <!-- Creates a div called "wrapper". Includes a header, the instructions, and the start quiz button. Inside the questions
-    the questions and end screens are created, but they are hidden by the JS.-->
-    <div class="wrapper">
-      <div id="start-screen" class="start">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-          Try to answer the following code-related questions within the time
-          limit. Keep in mind that incorrect answers will penalize your
-          score/time by ten seconds!
-        </p>
-        <button id="start">Start Quiz</button>
+    <div class="container">
+      <div id="welcome">
+        <h1>Welcome to Hayden's coding quiz!</h1>
+        <p>When ready, hit the start button and your quiz will begin!</p>
       </div>
 
       <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
+        <h1 id="question"></h1>
+        <div id="answers"></div>
       </div>
-
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
+      <div class="controls">
+        <button class="btn" id="start">Start</button>
       </div>
-
-      <div id="feedback" class="feedback hide"></div>
+      <div class="correct"></div>
     </div>
-<!-- Links to the javascript files -->
+
+    <div id="finished" class="hide">
+      <h2>Congratulations, you have finished the quiz!</h2>
+      <p>You scored <span id="finalScore"></span> out of 5!</p>
+      <button id="saveScore">Click to save score</button>
+    </div>
+
     <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/logic.js"></script>
   </body>
